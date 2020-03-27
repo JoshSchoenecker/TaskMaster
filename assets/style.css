@@ -1,0 +1,16 @@
+.headStyle {
+    background-color: #47dddd;
+    color: #006cd1;
+    box-shadow: 3px 0px 20px 5px #006cd1;
+    margin-top: 1.3rem;
+}
+
+.contStyle {
+    background-color: rgb(58, 53, 53);
+    position: absolute;
+}
+
+.ListPlacement{
+  position: absolute;
+  top: 15rem;
+}
