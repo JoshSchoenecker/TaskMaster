@@ -17,14 +17,14 @@
       <h1>Task Master</h1>
     </header>
 
-    <form class="m-4">
+    <form class="m-4" onsubmit="app.listController.createList(event)">
       <!-- Grid row -->
       <div class="form-row justify-content-center align-items-center">
         <!-- Grid column -->
-        <div class="col-auto">
+        <div class="form-group col-auto">
           <!-- Material input -->
           <div class="md-form">
-            <input type="text" class="form-control mb-2" id="inlineFormInputMD" placeholder="List Name...">
+            <input name="listName" type="text" class="form-control mb-2" id="inlineFormInputMD" placeholder="List Name...">
             <label class="sr-only" for="inlineFormInputMD">List Name</label>
           </div>
         </div>
@@ -39,27 +39,12 @@
 
 <!-- TODO where new list insertion will go -->
 <div class="container ListPlacement">
-    <div class="row m-auto">
-      <div class="card" style="width: 18rem;">
-        <div class="card-header text-center">
-          <h4 id="list-title"></h4>
-        </div>
-        <ul class="list-group">
-          <li class="list-group-item">Cras justo odio</li>
-          <li class="list-group-item">Dapibus ac facilisis in</li>
-          <li class="list-group-item">Vestibulum at eros</li>
-        </ul>
-        <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Add Task..." aria-label="Add Task" aria-describedby="button-addon2">
-          <div class="input-group-append">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon2">+</button>
-          </div>
-        </div>
-      </div>
+    <div id="lists" class="row m-auto">
+      
     </div>
   </div>
 
-
+  
     
 
 
