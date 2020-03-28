@@ -37,6 +37,8 @@ export default class ListController {
   }
 
 createListItem(event, listId){
+  console.log("attempting to create list item: Controller");
+  
   event.preventDefault()
 let formData = event.target
 let newListData = {
