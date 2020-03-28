@@ -1,5 +1,6 @@
 import List from "../Models/List.js";
 import store from '../store.js'
+import ListItem from '../Models/ListItem.js'
 //Public
 class ListService {
   //TODO  Here is where we handle all of our business logic,
@@ -21,11 +22,20 @@ class ListService {
   }
 
   createListItem(newListData, listId){
-    let newListItem = new List(newListData)
+    debugger
+    let newListItem = new ListItem(newListData)
     let list = store.State.lists.find(list => list.id == listId)
-    list.listItem.push(newListItem)
+    list.listItems.push(newListItem)
     store.saveState()
     console.log("attempting to create list item: Service");
+    
+  }
+//  TODO List Item delete
+  deleteListItem(listId){
+    let list = store.State.lists.find(list => list.id == listId)
+    
+    store.saveState()
+    console.log("attempting to delete: Service");
     
   }
 }

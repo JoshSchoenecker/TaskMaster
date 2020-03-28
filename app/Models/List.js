@@ -3,7 +3,7 @@ import { generateId } from "../utils.js";
 export default class List {
   constructor(data) {
     this.title = data.title 
-    this.listItem = data.listItem || []
+    this.listItems = data.listItems || []
     //TODO Your constructor takes in a data object that should have the properties you need to create your list here is a freebie, it will set the id its provided, or if that is undefined it will create a new one (this is an alternative to object destructuring)
     this.id = data.id || generateId();
   }
@@ -31,19 +31,20 @@ export default class List {
       </div>`
   }
 
-  get listItems(){
+  // TODO use to delete list item
+  // onclick="app.listController.delete('${listId}','${this.id}')"
+  get listItem(){
     let template = ''
-    this.listItem.forEach(listItem => template += listItem.getTemplate(this.id))
+    this.listItems.forEach(listItem => template +=  `<dd>
+      <button type="button" class="close text-danger" >
+      <span>&times;</span>
+      </button>
+      <h5>${listItem.title}</h5>
+      </dd>`)
     return template
   }
 
-  getTemplate(listId){
-    return /*html*/`
-    <dd>
-    <button type="button" class="close text-danger" onclick="app.listController.delete('${listId}','${this.id}')">
-    <span>&times;</span>
-    </button>
-    <h5>${this.listItem}</h5>
-    </dd>`
-  }
+  
 }
+
+

@@ -9,6 +9,7 @@ console.log("attempting to draw list: draw function");
 
   lists.forEach(List => template += List.Template)
   document.getElementById('lists').innerHTML = template
+
 }
 
 //Public
@@ -35,16 +36,26 @@ export default class ListController {
     ListService.delete(listId)
     _drawLists()
   }
+  
 
 createListItem(event, listId){
+  event.preventDefault()
   console.log("attempting to create list item: Controller");
   
-  event.preventDefault()
-let formData = event.target
-let newListData = {
-  listItem: formData.listItem.value
+  let formData = event.target
+  let newListData = {
+  title: formData.listItem.value
 }
   ListService.createListItem(newListData, listId)
-  _drawLists
+  _drawLists()
+}
+
+
+// TODO list item delete
+deleteListItem(listId){
+  console.log(listId);
+  
+  ListService.delete(listId)
+  _drawLists()
 }
 }
