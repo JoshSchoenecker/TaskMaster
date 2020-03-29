@@ -12,6 +12,7 @@ console.log("attempting to draw list: draw function");
 
 }
 
+
 //Public
 export default class ListController {
   constructor() {
@@ -32,10 +33,12 @@ export default class ListController {
   }
   delete(listId){
     console.log(listId);
-    
+    if (confirm("Are you sure?")){
     ListService.delete(listId)
-    _drawLists()
-  }
+  } else {}
+  _drawLists()
+}
+  
   
 
 createListItem(event, listId){
@@ -52,10 +55,10 @@ createListItem(event, listId){
 
 
 // TODO list item delete
-deleteListItem(listId){
+deleteListItem(listId, taskId){
   console.log(listId);
+  console.log(taskId);
   
-  ListService.delete(listId)
-  _drawLists()
+  // ListService.delete(listId)
 }
 }

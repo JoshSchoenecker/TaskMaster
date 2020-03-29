@@ -3,10 +3,6 @@ import store from '../store.js'
 import ListItem from '../Models/ListItem.js'
 //Public
 class ListService {
-  //TODO  Here is where we handle all of our business logic,
-  //given the information you need in the controller,
-  //what methods will you need to do when this class is first 'constructed'?
-  //NOTE You will need this code to persist your data into local storage, be sure to call the store method to save after each change
   createList(newListData){
     let newList = new List(newListData)
     store.State.lists.push(newList)
@@ -22,7 +18,6 @@ class ListService {
   }
 
   createListItem(newListData, listId){
-    debugger
     let newListItem = new ListItem(newListData)
     let list = store.State.lists.find(list => list.id == listId)
     list.listItems.push(newListItem)
@@ -31,9 +26,9 @@ class ListService {
     
   }
 //  TODO List Item delete
-  deleteListItem(listId){
-    let list = store.State.lists.find(list => list.id == listId)
-    
+  deleteListItem(listId, taskId){
+    console.log(listId(ListItem));
+    store.State.lists = store.State.lists.filter(List => List.id != taskId)
     store.saveState()
     console.log("attempting to delete: Service");
     
