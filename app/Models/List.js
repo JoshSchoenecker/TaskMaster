@@ -8,11 +8,11 @@ export default class List {
   }
 
   get Template() {
-    return /*html*/`
+    return`
     <div class="col-4">
     <div class="card" style="width: 18rem;">
       <div class="card-header text-center">
-        <button type="button" class="close text-danger align-self-center" onclick="app.listController.delete('${this.id}')">
+        <button type="button" class="close text-danger align-self-center" onclick="app.listController.deleteList('${this.id}')">
         <span>&times;</span>
       </button>
         <h4>${this.title}</h4>
@@ -29,11 +29,10 @@ export default class List {
       </div>`
   }
 
-  // NOTE onclick="app.listController.delete('${listId}','${this.id}')"
   get listItem(){
     let template = ''
     this.listItems.forEach(listItem => template +=  `<dd>
-      <button type="button" onclick="app.listController.deleteListItem('${this.id}')" class="close text-danger" >
+      <button type="button" onclick="app.listController.deleteListItem('${this.id}','${listItem.id}')" class="close text-danger" >
       <span>&times;</span>
       </button>
       <div class="form-check">
