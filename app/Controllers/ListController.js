@@ -21,8 +21,6 @@ export default class ListController {
 
   //TODO: Your app will need the ability to create, and delete both lists and listItems
   createList(event){
-    console.log("attempting to create list: Controller");
-    
     event.preventDefault()
     let formData = event.target
     let newList = {title: formData.listName.value}
@@ -32,7 +30,6 @@ export default class ListController {
     formData.reset()
   }
   deleteList(listId){
-    console.log(listId);
     if (confirm("Are you sure?")){
     ListService.deleteList(listId)
   } 
@@ -43,8 +40,6 @@ export default class ListController {
 
 createListItem(event, listId){
   event.preventDefault()
-  console.log("attempting to create list item: Controller");
-  
   let formData = event.target
   let newListData = {
   title: formData.listItem.value

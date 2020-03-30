@@ -10,7 +10,7 @@ export default class List {
   get Template() {
     return`
     <div class="col-4">
-    <div class="card" style="width: 18rem;">
+    <div class="card justify-self-center m-2" style="width: 18rem;">
       <div class="card-header text-center">
         <button type="button" class="close text-danger align-self-center" onclick="app.listController.deleteList('${this.id}')">
         <span>&times;</span>
@@ -32,8 +32,8 @@ export default class List {
   get listItem(){
     let template = ''
     this.listItems.forEach(listItem => template +=  `<dd>
-      <button type="button" onclick="app.listController.deleteListItem('${this.id}','${listItem.id}')" class="close text-danger" >
-      <span>&times;</span>
+      <button type="button" class="close text-danger" onclick="app.listController.deleteListItem('${this.id}','${listItem.id}')" >
+      <span>&times</span>
       </button>
       <div class="form-check">
       <input type="checkbox" class="form-check-input bg-success my-2">
