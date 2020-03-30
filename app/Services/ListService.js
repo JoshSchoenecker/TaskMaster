@@ -10,7 +10,7 @@ class ListService {
     console.log("attempting to creat list: service");
     
   }
-  delete(listId){
+  deleteList(listId){
     store.State.lists = store.State.lists.filter(List => List.id != listId)
     store.saveState()
     console.log("attempting to delete: Service");
@@ -25,14 +25,17 @@ class ListService {
     console.log("attempting to create list item: Service");
     
   }
-//  TODO List Item delete
-  // deleteListItem(listId){
-  //   console.log(listId(ListItem));
-  //   store.State.lists = store.State.lists.filter(List => List.id != listId)
-  //   store.saveState()
-  //   console.log("attempting to delete: Service");
-    
-  // }
+
+  deleteListItem(listId, listItemId){
+  // find specific list and item
+  let list = store.State.lists.find(list => list.id == listId)
+  let item = list.listItems.find(i => i.id == listItemId)
+  // delete list item
+  let index = list.listItems.indexOf(item)
+  list.listItems.splice(index, 1)
+
+  store.saveState()
+  }
 }
 
 const SERVICE = new ListService();
