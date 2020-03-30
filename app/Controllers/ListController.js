@@ -31,11 +31,11 @@ export default class ListController {
     _drawLists()
     formData.reset()
   }
-  delete(listId){
+  deleteList(listId){
     console.log(listId);
     if (confirm("Are you sure?")){
-    ListService.delete(listId)
-  } else {}
+    ListService.deleteList(listId)
+  } 
   _drawLists()
 }
   
@@ -54,11 +54,11 @@ createListItem(event, listId){
 }
 
 
-// TODO list item delete
-// deleteListItem(listId){
-//   console.log(listId);
-//     if (confirm("Are you sure?")){
-//     ListService.delete(listId)
-//   } else {}
-// }
+
+deleteListItem(listId, listItemId){
+  if (confirm("Are you sure?")){
+ListService.deleteListItem(listId,listItemId)
+  }
+_drawLists()
+}
 }
