@@ -33,11 +33,11 @@ export default class List {
     let template = ''
     this.listItems.forEach(listItem => template +=  `<dd>
       <button type="button" class="close text-danger" onclick="app.listController.deleteListItem('${this.id}','${listItem.id}')" >
-      <span>&times</span>
+      <span class="taskDelete">&times</span>
       </button>
-      <div class="form-check">
-      <input type="checkbox" class="form-check-input bg-success my-2">
-      <label class="form-check-label">${listItem.title}</label>
+      <div>
+      <input type="checkbox" ${listItem.completed ? 'checked':''} class="form-check-input bg-success ml-2 mt-2">
+      <label class="form-check-label ml-4">${listItem.title}</label>
       </div>
       </dd>`)
     return template
