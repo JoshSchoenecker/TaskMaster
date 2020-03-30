@@ -29,8 +29,7 @@ export default class List {
       </div>`
   }
 
-  // TODO use to delete list item
-  // onclick="app.listController.delete('${listId}','${this.id}')"
+  // NOTE onclick="app.listController.delete('${listId}','${this.id}')"
   get listItem(){
     let template = ''
     this.listItems.forEach(listItem => template +=  `<dd>

@@ -55,10 +55,10 @@ createListItem(event, listId){
 
 
 // TODO list item delete
-deleteListItem(listId, taskId){
-  console.log(listId);
-  console.log(taskId);
-  
-  // ListService.delete(listId)
-}
+// deleteListItem(listId){
+//   console.log(listId);
+//     if (confirm("Are you sure?")){
+//     ListService.delete(listId)
+//   } else {}
+// }
 }

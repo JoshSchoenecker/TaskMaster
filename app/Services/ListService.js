@@ -26,13 +26,13 @@ class ListService {
     
   }
 //  TODO List Item delete
-  deleteListItem(listId, taskId){
-    console.log(listId(ListItem));
-    store.State.lists = store.State.lists.filter(List => List.id != taskId)
-    store.saveState()
-    console.log("attempting to delete: Service");
+  // deleteListItem(listId){
+  //   console.log(listId(ListItem));
+  //   store.State.lists = store.State.lists.filter(List => List.id != listId)
+  //   store.saveState()
+  //   console.log("attempting to delete: Service");
     
-  }
+  // }
 }
 
 const SERVICE = new ListService();
