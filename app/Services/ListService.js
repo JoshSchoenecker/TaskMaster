@@ -29,11 +29,10 @@ class ListService {
   deleteListItem(listId, listItemId){
   // find specific list and item
   let list = store.State.lists.find(list => list.id == listId)
-  let item = list.listItems.find(i => i.id == listItemId)
+  let itemIndex = list.listItems.findIndex(i => i.id == listItemId)
   // delete list item
-  let index = list.listItems.indexOf(item)
-  list.listItems.splice(index, 1)
-
+  list.listItems.splice(itemIndex, 1)
+  // update state
   store.saveState()
   }
 }
