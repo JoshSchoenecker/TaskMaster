@@ -2,13 +2,13 @@ import { generateId } from "../utils.js";
 
 export default class List {
   constructor(data) {
-    this.title = data.title 
-    this.listItems = data.listItems || []
+    this.title = data.title;
+    this.listItems = data.listItems || [];
     this.id = data.id || generateId();
   }
 
   get Template() {
-    return`
+    return `
     <div class="col-4">
     <div class="card justify-self-center m-2" style="width: 18rem;">
       <div class="card-header text-center">
@@ -26,24 +26,27 @@ export default class List {
         ${this.listItem}
         </dl>
       </div>
-      </div>`
+      </div>`;
   }
 
-  get listItem(){
-    let template = ''
-    this.listItems.forEach(listItem => template +=  `<dd>
-      <button type="button" class="close text-danger" onclick="app.listController.deleteListItem('${this.id}','${listItem.id}')" >
+  get listItem() {
+    let template = "";
+    this.listItems.forEach(
+      (listItem) =>
+        (template += `<dd>
+      <button type="button" class="close text-danger" onclick="app.listController.deleteListItem('${
+        this.id
+      }','${listItem.id}')" >
       <span class="taskDelete">&times</span>
       </button>
       <div>
-      <input type="checkbox" ${listItem.completed ? 'checked':''} class="form-check-input bg-success ml-2 mt-2">
+      <input type="checkbox" ${
+        listItem.completed ? "checked" : ""
+      } class="form-check-input bg-success ml-2 mt-2">
       <label class="form-check-label ml-4">${listItem.title}</label>
       </div>
       </dd>`)
-    return template
+    );
+    return template;
   }
-
-  
 }
-
-
