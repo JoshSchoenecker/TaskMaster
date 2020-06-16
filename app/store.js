@@ -11,7 +11,7 @@ let _state = {
 function _loadState() {
   let data = JSON.parse(localStorage.getItem("TaskMaster"));
   if (data) {
-    data.lists = data.lists.map(l => new List(l));
+    data.lists = data.lists.map((l) => new List(l));
     _state = data;
   }
 }

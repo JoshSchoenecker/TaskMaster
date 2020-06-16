@@ -6,5 +6,4 @@ export default class ListItem {
     this.id = data.id || generateId();
     this.completed = data.completed || false;
   }
-
 }
